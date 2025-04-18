@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* 🌗 โทนสีพื้นฐาน */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 🌐 ฟอนต์และสีพื้นหลัง */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* 🖨️ สไตล์เฉพาะตอน print */
+@media print {
+  /* ✅ ซ่อนทุกอย่างนอกจาก #print-area */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* ✅ กำหนดลักษณะตอนพิมพ์ */
+  body {
+    background: white;
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    border: 1px solid black;
+  }
+
+  .print-header {
+    display: block !important;
+    margin-bottom: 1rem;
+  }
+
+  /* ❌ ปิดส่วนที่ไม่ควรพิมพ์ */
+  nav,
+   .answer-check,
+  .checkmark,
+  .crossmark,
+  .solution-button,
+  .print-hidden {
+    display: none !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+}
+
+
+
