@@ -2,7 +2,8 @@
   "name": "math-backend",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "echo 'Backend build step not defined'"
   },
   "dependencies": {
     "express": "^5.0.0",
@@ -12,4 +13,3 @@
     "nodemon": "^2.0.22"
   }
 }
-
