@@ -1,0 +1,16 @@
+{
+    "name": "math-backend",
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js",
+      "build": "echo 'Backend build step not defined'"
+    },
+    "dependencies": {
+      "dotenv": "^16.5.0",
+      "express": "^5.0.0",
+      "socket.io": "^4.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.22"
+    }
+  }
