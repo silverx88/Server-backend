@@ -57,9 +57,16 @@ io.on("connection", (socket) => {
   /**
    * รับคำสั่งล้างกระดานจากผู้ใช้
    * แล้วกระจายคำสั่งไปยังผู้ใช้คนอื่น
+   * 
+   * คำสั่ง | ส่งถึงใครบ้าง
+      socket.emit(...) | ส่งถึงเฉพาะตัวเอง
+      socket.broadcast.emit(...) | ส่งถึงทุกคน ยกเว้นตัวเอง
+      io.emit(...) | ส่งถึง ทุกคน
+   * 
+   * 
    */
   socket.on("clear", () => {
-    socket.broadcast.emit("clear");
+    io.emit("clear");
   });
 
   /**
